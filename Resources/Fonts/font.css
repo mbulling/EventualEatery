@@ -11,12 +11,13 @@
 
 }
 
-h1 {
+.title-heading {
     font-family: 'dinlight';
     src: url('dinlight-webfont.woff2') format('woff2'),
          url('dinlight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    color: #ffffff;
 
 }
 
@@ -26,6 +27,11 @@ p {
          url('dinlight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    text-align: center;
 
+}
+
+.desc {
+    text-align: center;
 }
 
