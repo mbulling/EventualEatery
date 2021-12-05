@@ -56,4 +56,4 @@ def encode(df, col, max_val):
     df[col + '_cos'] = np.cos(df[col]*np.pi*2/max_val)
     return df
 
-print(predict_menu(getFood(), convert_features('2018-05-19','Saturday', 4)))
+#print(predict_menu(getFood(), convert_features('2018-05-19','Saturday', 4)))

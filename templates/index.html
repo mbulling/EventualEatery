@@ -32,9 +32,19 @@
 </div>
 
 
-
-<div class='becker'>
-    <h2 class='house-name'>Carl Becker House</h2>
+<div class = "l">
+<label for="dining" class='house-name'>Dining Hall: </label>
+<select name="dinings" id="dinings">
+	<option value="4">Becker House Dining Room</option>
+	<option value="9">Cook House Dining Room</option>
+	<option value="17">Jansen's Dining Room at Bethe House</option>
+	<option value="19">Keeton House Dining Room</option>
+	<option value="23">North Star Dining Room</option>
+	<option value="24">Okenshields</option>
+	<option value="25">Risley Dining Room</option>
+	<option value="26">Robert Purcell Marketplace Eatery</option>
+	<option value="27">Rose House Dining Room</option>
+  </select>
 </div>
 
 <script>
@@ -48,10 +58,11 @@
 
             document.getElementById("output").innerHTML = ""
             var date = m+"/"+d+"/"+y;
+			var id = document.getElementById("dinings").value;
 
             $.getJSON({
             url: "/predict",
-            data: {dateEntry : date},
+            data: {dateEntry : date, ID : id},
             success: function(data){
                 for(let i =0; i < data.foods.length; i++){
                     const para = document.createElement("p");

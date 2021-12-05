@@ -19,8 +19,7 @@ def predict():
         dateEntry[0] = '0' + dateEntry[0]
     dayEntry = datetime.date(day=int(dateEntry[1]), month=int(dateEntry[0]), year=int(dateEntry[2])).strftime('%A %d %B %Y').split(" ")[0]
     dateEntry = dateEntry[2]+"-"+dateEntry[0]+"-"+dateEntry[1]
-    foods = model.predict_menu(model.getFood(), model.convert_features(dateEntry, dayEntry))
-    print(foods)
+    foods = model.predict_menu(model.getFood(), model.convert_features(dateEntry, dayEntry, int(request.args.get('ID'))))
     return jsonify({'foods': foods}) 
 
 if __name__ == '__main__':
