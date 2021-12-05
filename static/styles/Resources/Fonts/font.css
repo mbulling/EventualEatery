@@ -63,6 +63,16 @@ p {
 
 }
 
+h2 {
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+
+}
+
 .d1 {
     font-family: 'dinlight';
     src: url('dinlight-webfont.woff2') format('woff2'),
