@@ -17,7 +17,20 @@
          url('dinlight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    color: #000000;
+    font-size: 65px;
+    
+
+}
+
+.upcoming-menu {
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
     color: #ffffff;
+    text-align: center;
 
 }
 
@@ -33,30 +46,6 @@
 
 }
 
-.upcoming-menu {
-    font-family: 'dinlight';
-    src: url('dinlight-webfont.woff2') format('woff2'),
-         url('dinlight-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-    line-height: 2px;
-
-}
-
-.days {
-    font-family: 'dinlight';
-    src: url('dinlight-webfont.woff2') format('woff2'),
-         url('dinlight-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    color: #000000;
-    text-align: center;
-    font-weight: bold;
-}
-
 p {
     font-family: 'dinlight';
     src: url('dinlight-webfont.woff2') format('woff2'),
@@ -64,6 +53,18 @@ p {
     font-weight: normal;
     font-style: normal;
     text-align: center;
+
+}
+
+.nav {
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    line-height: 10px;
+    margin-bottom: 0px;
 
 }
 

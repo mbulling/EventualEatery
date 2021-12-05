@@ -22,6 +22,20 @@ ul.days > li {
     padding: 10px 20px;
   }
 
+  ul.nav {
+    text-align: center;
+    padding-left: 0px;
+
+}
+
+ul.nav > li {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+
+.nav {
+    text-align: center;
+}
 .day {
     text-align: center;
 }
@@ -49,5 +63,7 @@ a:link {
 .menubar {
     background-color: #4990e2;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
 }
