@@ -25,4 +25,5 @@ for i in range(len(eateries)):
                                 addFood = dinnerFood[(date, dayOfWeek)]
                                 addFood.append(dinnerMenu["menu"][j]["items"][l]["item"])
                                 dinnerFood[(date, dayOfWeek)] = addFood
+print(dinnerFood.keys())
 print(dinnerFood)
