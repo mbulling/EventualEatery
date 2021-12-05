@@ -23,7 +23,7 @@ for i in range(len(eateries)):
                         dinnerMenu["menu"][j]["category"] == "Hot Traditional Station - Sides":
                             for l in range(len(dinnerMenu["menu"][j]["items"])):
                                 addFood = dinnerFood[(date, dayOfWeek)]
-                                addFood.append(dinnerMenu["menu"][j]["items"][l]["item"])
+                                addFood.append(dinnerMenu["menu"][j]["items"][l]["item"].strip())
                                 dinnerFood[(date, dayOfWeek)] = addFood
 print(dinnerFood.keys())
 print(dinnerFood)
