@@ -11,7 +11,16 @@ from sklearn.preprocessing import MultiLabelBinarizer
 
 def train_decision_tree(dinnerfood):
     data = to_df(dinnerfood)
-    X_train, X_test, Y_train, Y_test = train_test(data)
+    data['month'] = pd.DatetimeIndex(data['Date']).month
+    data = encode(data, 'month', 12)
+    data['date'] = pd.DatetimeIndex(data['Date']).day
+    data = encode(data, 'date', 365)
+    data['week_day'] = pd.DatetimeIndex(data['Date']).dayofweek
+    data = encode(data, 'week_day', 7)
+    X = data[['month_sin','month_cos','date_sin','date_cos', 'week_day_cos', 'week_day_sin']]
+    Y= data.drop(columns=['month_sin','month_cos','date_sin','date_cos', 'week_day_cos', 'week_day_sin','month','date','week_day','Date','Day'])
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
+    tree = DecisionTreeClassifier()
     tree.fit(X_train, Y_train)
     tree_pred_train = tree.predict(X_train)
     tree_pred_test = tree.predict(X_test)
@@ -40,17 +49,3 @@ def DTreeModel(df):
     print("Training Accuracy: ", accuracy_score(Y_train, tree_pred_train))
 
     return tree_pred_train, tree_pred_test
-
-def train_test(data):
-    mlb = MultiLabelBinarizer()
-    data['month'] = pd.DatetimeIndex(data['Date']).month
-    data = encode(data, 'month', 12)
-    data['date'] = pd.DatetimeIndex(data['Date']).day
-    data = encode(data, 'date', 365)
-    data['week_day'] = pd.DatetimeIndex(data['Date']).dayofweek
-    data = encode(data, 'week_day', 7)
-    X = data[['month_sin','month_cos','date_sin','date_cos', 'week_day_cos', 'week_day_sin']]
-    Y= data.drop(columns=['month_sin','month_cos','date_sin','date_cos', 'week_day_cos', 'week_day_sin','month','date','week_day','Date','Day'])
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
-    return X_train, X_test, Y_train, Y_test
-
