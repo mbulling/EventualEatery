@@ -3,13 +3,13 @@ import pandas as pd
 
 def to_df(dinnerfood):
     dates = list(dinnerfood.keys())
-    feats = np.empty((0,2))
+    feats = np.empty((0,3))
     others = list(dinnerfood.values())
     for tuple in dates:
         feat = np.asarray(tuple)
         feats = np.vstack((feats,feat))
 
-    data = pd.DataFrame(data=feats, columns = ['Date','Day'])
+    data = pd.DataFrame(data=feats, columns = ['Dining Hall','Date','Day'])
 
     for x in data.index:
         for item in others[x]:
