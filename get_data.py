@@ -28,4 +28,3 @@ def getFood():
                                         addFood.append(dinnerMenu["menu"][j]["items"][l]["item"].strip())
                                         dinnerFood[(date, dayOfWeek)] = addFood
     return dinnerFood
-
