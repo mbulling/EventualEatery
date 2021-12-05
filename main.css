@@ -41,3 +41,13 @@ a:link {
     font-size: 28px;
     line-height: 2px;
 }
+
+.becker {
+    background-color: #d3d3d3;
+}
+
+.menubar {
+    background-color: #4990e2;
+    width: 100%;
+
+}
