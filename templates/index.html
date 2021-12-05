@@ -3,6 +3,27 @@
         <link rel="stylesheet" type="text/css" href="../static/styles/main.css"/>
         <link rel="stylesheet" type="text/css" href="../static/styles/Resources/Fonts/font.css"/>
     </head>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type=text/javascript>
+    $(document).ready(function(){
+        $('#day1').click( function() {
+
+            var day = document.getElementById("date1").innerHTML;
+            var date = document.getElementById("d1").innerHTML;
+
+            $.getJSON({
+            url: "/predict",
+            data: {dayEntry : day, dateEntry : date},
+            success: function(data){
+                $("#output").html(data.dayEntry);
+            }
+            });
+        });
+    });
+</script>
+
 <title>EventualEatery</title>
     
 <div class='nav-bar'>
@@ -34,85 +55,42 @@
 
 <div class='calendar'>
     <ul class="days">
-        <li><a href="/home">
+        <li>
+            <button id='day1'>
             <div class='day'>
                 <div class='wd'>
                     <p id='date1'></p>
                 </div>
                 <p class='nd' id='d1'></p>
             </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date2'></p>
-                </div>
-                <p class='nd' id='d2'></p>
-            </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date3'></p>
-                </div>
-                <p class='nd' id='d3'></p>
-            </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date4'></p>
-                </div>
-                <p class='nd' id='d4'></p>
-            </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date5'></p>
-                </div>
-                <p class='nd' id='d5'></p>
-            </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date6'></p>
-                </div>
-                <p class='nd' id='d6'></p>
-            </div>
-        </a></li>
-        <li><a href="/home">
-            <div class='day'>
-                <div class='wd'>
-                    <p id='date7'></p>
-                </div>
-                <p class='nd' id='d7'></p>
-            </div>
-        </a></li>
+            </button>
+        </li>
       </ul>
-
+      
+      <p class='nd' id="output"></p>
     
 </div>
 
 <script type='text/javascript'>
     days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
     n =  new Date();
-    d = n.getDate();
+    d = parseInt(n.getDate());
+    m = parseInt(n.getMonth());
+    y = parseInt(n.getFullYear());
     weekday = n.getDay()
-    document.getElementById("d1").innerHTML = d;
-    document.getElementById("date1").innerHTML = 'Today';
-    document.getElementById("d2").innerHTML = d + 1;
+    document.getElementById("d1").innerHTML = m + "/" + d + "/" + y;
+    document.getElementById("date1").innerHTML = days[weekday];
+    document.getElementById("d2").innerHTML = m + "/" + (d+1) + "/" + y;
     document.getElementById("date2").innerHTML = days[weekday+1];
-    document.getElementById("d3").innerHTML = d + 2;
+    document.getElementById("d3").innerHTML = m + "/" + (d+2) + "/" + y;
     document.getElementById("date3").innerHTML = days[weekday+2];
-    document.getElementById("d4").innerHTML = d + 3;
+    document.getElementById("d4").innerHTML = m + "/" + (d+3) + "/" + y;
     document.getElementById("date4").innerHTML = days[weekday+3];
-    document.getElementById("d5").innerHTML = d + 4;
+    document.getElementById("d5").innerHTML = m + "/" + (d+4) + "/" + y;
     document.getElementById("date5").innerHTML = days[weekday+4];
-    document.getElementById("d6").innerHTML = d + 5;
+    document.getElementById("d6").innerHTML = m + "/" + (d+5) + "/" + y;
     document.getElementById("date6").innerHTML = days[weekday+5];
-    document.getElementById("d7").innerHTML = d + 6;
+    document.getElementById("d7").innerHTML = m + "/" + (d+6) + "/" + y;
     document.getElementById("date7").innerHTML = days[weekday+6];
 </script>
 
