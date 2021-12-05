@@ -11,7 +11,6 @@ def getFood():
         eateries = data["data"]["eateries"]
         for i in range(len(eateries)):
             if "Dining Room" in eateries[i]["name"] or "Robert" in eateries[i]["name"] or "Oken" in eateries[i]["name"]:
-                print(i, eateries[i]["name"])
                 for j in range(len(eateries[i]["operatingHours"])):
                     date = eateries[i]["operatingHours"][j]["date"] 
                     dateArr = date.split("-")
@@ -29,5 +28,3 @@ def getFood():
                                         addFood.append(dinnerMenu["menu"][j]["items"][l]["item"].strip())
                                         dinnerFood[(i, date, dayOfWeek)] = addFood
     return dinnerFood
-
-getFood()
