@@ -33,7 +33,6 @@
 
 }
 
-<<<<<<< HEAD:Resources/Fonts/font.css
 .upcoming-menu {
     font-family: 'dinlight';
     src: url('dinlight-webfont.woff2') format('woff2'),
@@ -58,8 +57,6 @@
     font-weight: bold;
 }
 
-=======
->>>>>>> b39da94851eff1aa2c44df9dc6f70dd24ae13787:static/styles/Resources/Fonts/font.css
 p {
     font-family: 'dinlight';
     src: url('dinlight-webfont.woff2') format('woff2'),
