@@ -9,7 +9,7 @@
 <script type=text/javascript>
     $(document).ready(function(){
         $('#day1').click( function() {
-
+            document.getElementById("output").innerHTML = ""
             var day = document.getElementById("date1").innerHTML;
             var date = document.getElementById("d1").innerHTML;
 
@@ -17,7 +17,13 @@
             url: "/predict",
             data: {dayEntry : day, dateEntry : date},
             success: function(data){
-                $("#output").html(data.dayEntry);
+                for(let i =0; i < data.foods.length; i++){
+                    const para = document.createElement("p");
+                    const node = document.createTextNode(data.foods[i]);
+                    para.appendChild(node);
+                    const element = document.getElementById("output");
+                    element.appendChild(para);
+                }
             }
             });
         });
@@ -67,7 +73,7 @@
         </li>
       </ul>
       
-      <p class='nd' id="output"></p>
+      <div class='nd' id="output"></p>
     
 </div>
 

@@ -21,7 +21,7 @@ def convert_features(date, day):
     return [np.sin(month*pi*2/12), np.cos(month*pi*2/12), np.sin(date_of_month*pi*2/31), np.cos(date_of_month*pi*2/31), np.sin(weekday*pi*2/7), np.cos(weekday*pi*2/7)]
 
 def predict_menu(dinnerfood, features):
-    tree = DecisionTreeClassifier(max_depth=10)
+    tree = DecisionTreeClassifier(max_depth=10, random_state=42)
     tree, items = train_decision_tree(dinnerfood, tree)
     preds = tree.predict([features])[0]
     menu_items = []
@@ -46,8 +46,8 @@ def train_decision_tree(dinnerfood, tree):
     tree_pred_train = tree.predict(X_train)
     tree_pred_test = tree.predict(X_test)
 
-    print("Test Accuracy: ", accuracy_score(Y_test, tree_pred_test))
-    print("Training Accuracy: ", accuracy_score(Y_train, tree_pred_train))
+    #print("Test Accuracy: ", accuracy_score(Y_test, tree_pred_test))
+    #print("Training Accuracy: ", accuracy_score(Y_train, tree_pred_train))
 
     return tree, Y.columns
 
@@ -56,4 +56,4 @@ def encode(df, col, max_val):
     df[col + '_cos'] = np.cos(df[col]*np.pi*2/max_val)
     return df
 
-print(predict_menu(getFood(), convert_features('2018-05-19','Saturday')))
+#print(predict_menu(getFood(), convert_features('2018-05-19','Saturday')))
