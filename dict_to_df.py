@@ -15,3 +15,5 @@ def to_df(dinnerfood):
         for item in others[x]:
             data[item] = 0
             data.loc[x,item] = 1
+    
+    return data
