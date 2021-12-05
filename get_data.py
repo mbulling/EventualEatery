@@ -1,7 +1,7 @@
 import json
 import datetime
 
-with open('./data/eateries1.json') as f:
+with open('./data/eateries3.json') as f:
     data = json.load(f)
 
 dinnerFood = dict()
