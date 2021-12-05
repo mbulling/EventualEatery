@@ -56,7 +56,6 @@
       week:6,
         onClick:function(y,m,d){
 
-            document.getElementById("output").innerHTML = ""
             var date = m+"/"+d+"/"+y;
 			var id = document.getElementById("dinings").value;
 
@@ -64,11 +63,34 @@
             url: "/predict",
             data: {dateEntry : date, ID : id},
             success: function(data){
+				document.getElementById("output").innerHTML = ""
+				document.getElementById("hour").innerHTML = ""
+				
+				const para = document.createElement("h2");
+				const node = document.createTextNode(data.hours[0]);
+				para.appendChild(node);
+				const element = document.getElementById("hour");
+				element.appendChild(para);
+
+				const para2 = document.createElement("h2");
+				const node2 = document.createTextNode("Menu");
+				para2.appendChild(node2);
+				const element2 = document.getElementById("output");
+				element2.appendChild(para2);
+
                 for(let i =0; i < data.foods.length; i++){
                     const para = document.createElement("p");
                     const node = document.createTextNode(data.foods[i]);
                     para.appendChild(node);
                     const element = document.getElementById("output");
+                    element.appendChild(para);
+                }
+
+				for(let i =1; i < data.hours.length; i++){
+                    const para = document.createElement("p");
+                    const node = document.createTextNode(data.hours[i]);
+                    para.appendChild(node);
+                    const element = document.getElementById("hour");
                     element.appendChild(para);
                 }
             }
@@ -79,11 +101,22 @@
     });
 </script>
 
-<div class="container">
-  <div id="demo"></div>
-</div>
 
-<div id="output"></div>
+<div class="row">
+	<div class="column">
+		<div id="hour"><br></div>
+	</div>
+	<div class="column">
+		<div class="container">
+			<div id="demo"></div>
+		  </div>
+	</div>
+	<div class="column">
+		<div id="output"><br></div>
+	</div>
+  </div>
+
+
 
 
 <script>
