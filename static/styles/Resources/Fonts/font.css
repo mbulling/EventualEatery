@@ -92,3 +92,102 @@ p {
     text-align: center;
 }
 
+.rapCalendar{
+	margin:8px;
+	padding:8px;
+	padding:8px;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar table{
+	margin:0px auto;
+	border-spacing: 0px;
+    border-collapse:separate;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar caption{
+	color:#3784cc;
+	font-weight:bold;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+
+.rapCalendar tbody td{
+	text-align: center;
+	border: 1px solid transparent;
+	width:100px;
+	height:100px;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+
+.rapCalendar .calSelectable:hover{
+	border-color:black;
+	background-color:#3784cc;
+	border-radius:8px;
+	cursor:pointer;
+	font-weight:bold;
+	font-size: 16px;
+	margin-bottom: 6px;
+    padding-bottom: 10px;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .calSelected{
+	border-color:black;
+	border-radius:8px;
+	font-weight:bold;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+
+}
+.rapCalendar .larr{
+	color:black;
+	cursor:pointer;
+	float:left;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .larr:before{
+	content:"<";
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .larr:hover{
+	color:black;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .rarr{
+	color:black;
+	cursor:pointer;
+	float:right;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .rarr:before{
+	content:">";
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+.rapCalendar .rarr:hover{
+	color:black;
+    font-family: 'dinlight';
+    src: url('dinlight-webfont.woff2') format('woff2'),
+         url('dinlight-webfont.woff') format('woff');
+}
+
