@@ -1,7 +1,7 @@
 <HTML>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/Resources/Fonts/font.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <link rel="stylesheet" type="text/css" href="./Resources/Fonts/font.css"/>
     </head>
 <title>EventualEatery</title>
     
@@ -15,5 +15,96 @@
 <br>
 
 <h2 class='house-name'>Carl Becker House</h2>
+
+<p style="padding-left: 14%; font-size: 100%;"  id="date"></p>
+
+
+
+
+
+
+<div class='calendar'>
+    <ul class="days">
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date1'></p>
+                </div>
+                <p class='nd' id='d1'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date2'></p>
+                </div>
+                <p class='nd' id='d2'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date3'></p>
+                </div>
+                <p class='nd' id='d3'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date4'></p>
+                </div>
+                <p class='nd' id='d4'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date5'></p>
+                </div>
+                <p class='nd' id='d5'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date6'></p>
+                </div>
+                <p class='nd' id='d6'></p>
+            </div>
+        </a></li>
+        <li><a href="/home">
+            <div class='day'>
+                <div class='wd'>
+                    <p id='date7'></p>
+                </div>
+                <p class='nd' id='d7'></p>
+            </div>
+        </a></li>
+      </ul>
+
+    
+</div>
+
+<script type='text/javascript'>
+    days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    n =  new Date();
+    d = n.getDate();
+    weekday = n.getDay()
+    document.getElementById("d1").innerHTML = d;
+    document.getElementById("date1").innerHTML = 'Today';
+    document.getElementById("d2").innerHTML = d + 1;
+    document.getElementById("date2").innerHTML = days[weekday+1];
+    document.getElementById("d3").innerHTML = d + 2;
+    document.getElementById("date3").innerHTML = days[weekday+2];
+    document.getElementById("d4").innerHTML = d + 3;
+    document.getElementById("date4").innerHTML = days[weekday+3];
+    document.getElementById("d5").innerHTML = d + 4;
+    document.getElementById("date5").innerHTML = days[weekday+4];
+    document.getElementById("d6").innerHTML = d + 5;
+    document.getElementById("date6").innerHTML = days[weekday+5];
+    document.getElementById("d7").innerHTML = d + 6;
+    document.getElementById("date7").innerHTML = days[weekday+6];
+</script>
 
 </HTML>
