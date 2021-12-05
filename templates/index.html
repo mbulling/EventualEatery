@@ -7,29 +7,7 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type=text/javascript>
-    $(document).ready(function(){
-        $('#day1').click( function() {
-            document.getElementById("output").innerHTML = ""
-            var day = document.getElementById("date1").innerHTML;
-            var date = document.getElementById("d1").innerHTML;
 
-            $.getJSON({
-            url: "/predict",
-            data: {dayEntry : day, dateEntry : date},
-            success: function(data){
-                for(let i =0; i < data.foods.length; i++){
-                    const para = document.createElement("p");
-                    const node = document.createTextNode(data.foods[i]);
-                    para.appendChild(node);
-                    const element = document.getElementById("output");
-                    element.appendChild(para);
-                }
-            }
-            });
-        });
-    });
-</script>
 
 <title>EventualEatery</title>
 
@@ -67,7 +45,23 @@
     $('#demo').jsRapCalendar({
       week:6,
         onClick:function(y,m,d){
-            alert(y + '-' + m + '-' + d);
+
+            document.getElementById("output").innerHTML = ""
+            var date = m+"/"+d+"/"+y;
+
+            $.getJSON({
+            url: "/predict",
+            data: {dateEntry : date},
+            success: function(data){
+                for(let i =0; i < data.foods.length; i++){
+                    const para = document.createElement("p");
+                    const node = document.createTextNode(data.foods[i]);
+                    para.appendChild(node);
+                    const element = document.getElementById("output");
+                    element.appendChild(para);
+                }
+            }
+    	});
         }
     });
     
@@ -77,6 +71,8 @@
 <div class="container">
   <div id="demo"></div>
 </div>
+
+<div id="output"></div>
 
 
 <script>
