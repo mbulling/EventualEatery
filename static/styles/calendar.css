@@ -28,6 +28,8 @@
 	border-radius:8px;
 	cursor:pointer;
 	font-weight:bold;
+	font-size: 16px;
+	margin-bottom: 6px;
 }
 .rapCalendar .calSelected{
 	border-color:black;
